@@ -32,6 +32,7 @@ describe("Test User service", () => {
     let res = await userService.login("username321", "password321");
     //login successful
     expect(res.username).toEqual("username321");
+    console.log("HShshshshs",localStorage.setItem.called)
     expect(localStorage.setItem.called).toEqual(true);
   });
 

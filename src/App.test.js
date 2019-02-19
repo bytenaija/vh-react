@@ -37,7 +37,9 @@ describe("Test AppComponent", () => {
     const wrapper = mount(<CustomProvider><App /></CustomProvider>);
     let a = wrapper.find(PrivateRoute);
     let b = wrapper.find(Route);
+
     expect(a.length).toEqual(1);
-    expect(b.length).toEqual(3);
+
+    expect(b.length).toEqual(4);
   });
 });

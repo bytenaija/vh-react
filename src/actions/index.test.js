@@ -11,7 +11,7 @@ import {mount,shallow} from 'enzyme';
 import {spy} from 'sinon';
 import { userConstants } from '../constants';
 import { history } from '../helpers';
-import App from '../App';
+import {App} from '../App';
 import {store} from '../helpers/store';
 
 configure({
@@ -20,6 +20,7 @@ configure({
 
 describe("Test Redux Alert Actions", () => {
   it('uses correct constants', () => {
+    console.log(alertActions.success("Random Success Message"))
     expect(alertActions.success("Random Success Message")).toEqual({
       type: "ALERT_SUCCESS",
       message: "Random Success Message"
@@ -38,6 +39,7 @@ describe("Test Authentication via Redux", () => {
   it('logout uses service and correct constant', () => {
     spy(userService, "logout");
     userActions.logout();
+    
     expect(userService.logout.called).toEqual(true);
     expect(userActions.logout()).toEqual({type: 'USERS_LOGOUT'});
   });
